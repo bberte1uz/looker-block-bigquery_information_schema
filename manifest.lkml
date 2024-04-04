@@ -2,29 +2,29 @@
 
 constant: CONNECTION {
   # Enter the name of the Looker connection to use
-  value: ""
+  value: "bigquery-dop-dev"
   export: override_optional
 }
 
 constant: REGION {
   # E.g. us
-  value: "us"
+  value: "europe-west1"
   export: override_optional
 }
 constant: SCOPE {
   # The table from which jobs data will be sourced, per the options described at https://cloud.google.com/bigquery/docs/information-schema-jobs
   # This block has been tested with PROJECT or ORGANIZATION. Tables for USER and FOLDER are untested as of 2021-04
-  value: "PROJECT"
+  value: "ORGANIZATION"
   export: override_optional
 }
 constant: BILLING_PROJECT_ID {
   # This is used to reference Capacity Commitment data (for flat-rate billing) to compare slot usage against
-  value: " "
+  value: "prj-uzl-dop-dev-959d"
   export: override_optional
 }
 constant: RESERVATION_ADMIN_PROJECT  {
   # IF Different than Billing Project ID, used when querying RESERVATIONS_BY_<SCOPE> Data
-  value: " "
+  value: "prj-uzl-dop-dev-959d"
   export: override_optional
 }
 
@@ -43,7 +43,7 @@ constant: PII_QUERY_TEXT {
   # Whether/how to expose strings/numbers that may be embedded in query text or query plans (which might sometimes contain PII)
   # Valid values are: SHOW, or HIDE
   # Invalid values will be treated as HIDE
-  value: "HIDE"
+  value: "SHOW"
   export: override_optional
 }
 
